@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Covid 19 status Records project using Angular-js -->
+    <title>Covid-19 Records</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="AngularJsExample1.js"></script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+    <div class="container">
+        <div class="jombotron">
+            <h1 class="text-center">{{title}}</h1>
+            <div class="text-center">
+            <img src="mask.jpg" class="img-fluid rounded "  alt="">
+        </div>
+            <p class="text-center">The pandemic continues to impact all aspects of our society. Below you will find updates, recommendations, and resources to stay safe and healthy.
+                The COVID-19 pandemic has disproportionately affected the U.S. Latino community. As the nation continues to battle the pandemic, we advocate for all in the Hispanic community to have easy and effective access to the COVID-19 vaccines.
+            </p>
+           
+       <!-- all -data -->
+       <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card bg-warning text-white">
+                <div class="card-cody">
+                    <h3>Confirmed Caese</h3>
+                    <h3>{{all_data.confirmed.value}}</h3>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white">
+                <div class="card-cody">
+                    <h3>Recovered Caese</h3>
+                    <h3>{{all_data.recovered.value}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-danger text-white">
+                <div class="card-cody">
+                    <h3>Death Caese</h3>
+                    <h3>{{all_data.deaths.value}}</h3>
+                </div>
+            </div>
+        </div>
+      
+        </div>
+       
+       <!-- end data -->
+       <input type="text" ng-model = "c" ng-change="get_country_data()" class="form-control mt-4" placeholder="Choose country here">
+        <!-- country data start -->
+         <!-- all -data -->
+         <div class="container-fluid" ng-if="c_data">
+         <h1 class="text-center mt-4 text-Uppercase">{{c}} Status</h1>
+       <div class="row text-center mt-4 " >
+        <div class="col-md-4">
+            <div class="card bg-warning text-white">
+                <div class="card-cody">
+                    <h3>Confirmed Caese</h3>
+                    <h3>{{c_data.confirmed.value}}</h3>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card bg-success text-white">
+                <div class="card-cody">
+                    <h3>Recovered Caese</h3>
+                    <h3>{{c_data.recovered.value}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card bg-danger text-white">
+                <div class="card-cody">
+                    <h3>Death Caese</h3>
+                    <h3>{{c_data.deaths.value}}</h3>
+                </div>
+            </div>
+        </div>
+      
+        </div>
+    </div>
+       </div>
+    </div>
+       <!-- end data -->
+        <!-- country data end -->
+        </div>
+    </div>
+    
+</body>
+</html>
